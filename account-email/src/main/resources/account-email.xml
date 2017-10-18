@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:schemaLocation="http://www.springframework.org/schema/beans  http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">  
+	
+	<bean id="javaMailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+		<property name="protocol" value="smtps"></property>
+		<property name="host" value="smtp.163.com"></property>
+		<property name="port" value="465"></property>
+		<property name="username" value="tk1143413@163.com"></property>
+		<property name="password" value="fanfan"></property>
+		<property name="javaMailProperties">
+			<props>
+				<prop key="mail.smtps.auth">true</prop>
+			</props>
+		</property>
+	</bean>
+	<bean id="accountEmailService" class="com.shisj.mvnstudy.account.email.AccountEmailServiceImpl">
+		<property name="javaMailSender" ref="javaMailSender"></property>
+		<property name="systemEmail" value="shishengjie@163.com"></property>
+	</bean>
+</beans>

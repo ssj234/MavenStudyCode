@@ -1,0 +1,42 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+
+  <!-- 设置继承 -->
+  <parent>
+  	<groupId>com.shisj.mvnstudy.account</groupId>
+  	<artifactId>account-parent</artifactId>
+  	<version>1.0.1-SNAPSHOT</version>
+  	<relativePath>../account-parent/pom.xml</relativePath>
+  </parent>
+  
+  <artifactId>account-service</artifactId>
+  <packaging>war</packaging>
+
+  <name>account-service</name>
+  <url>http://maven.apache.org</url>
+
+
+  <dependencies>
+    <dependency>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>account-email</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>account-persist</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>account-captcha</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+    
+  </dependencies>
+  
+  <build>
+  </build>
+</project>
