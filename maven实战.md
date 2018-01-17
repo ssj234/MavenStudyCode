@@ -371,3 +371,10 @@ mvn package
 mvn instal
 mvn deploy
 ```
+
+## 将依赖的jar包拷贝到指定路径
+
+
+```
+mvn dependency:copy-dependencies -DoutputDirectory=src/main/webapp/WEB-INF/lib  -DincludeScope=runtime  
+```
